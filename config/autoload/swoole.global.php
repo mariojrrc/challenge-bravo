@@ -12,7 +12,11 @@ return [
         'swoole-http-server' => [
             'host' => 'localhost',
             'port' => 8080,
-            'mode' => SWOOLE_PROCESS, // SWOOLE_BASE or SWOOLE_PROCESS;
+            'mode' => SWOOLE_PROCESS,
+            'static-files' => [
+                'document-root' => getcwd() . '/public/',
+                'enable' => true,
+            ],
         ],
     ],
 ];
